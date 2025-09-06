@@ -2,6 +2,7 @@
 // Copyright (c) 2025 QuickestCode
 #ifndef GITHUB_QUICKESTCODE_REPO_SIMPLEMATHDLL_SIMPLEMATHDLL_H
 #define GITHUB_QUICKESTCODE_REPO_SIMPLEMATHDLL_SIMPLEMATHDLL_H
+// Windows DLL Support
 #ifdef _WIN32
 #define EXPORT __declspec(dllexport)
 #else
@@ -9,4 +10,7 @@
 #endif
 // Functions from DLL should be added here, starting with EXPORT, such as
 // EXPORT int add(int a = 0, int b= 0);
+
+// Custom Sqrt Function, does not support
+EXPORT double CustomSqrt(double input);
 #endif
