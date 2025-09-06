@@ -1,9 +1,6 @@
 name: PR Build & Release
 
 on:
-  pull_request:
-    branches:
-      - releases
   push:
     branches:
       - releases   # Trigger für finalen Release nach Merge
@@ -14,7 +11,6 @@ jobs:
   # -------------------
   build_pr:
     runs-on: ubuntu-latest
-    if: github.event_name == 'pull_request'
     steps:
       - name: Checkout PR Branch
         uses: actions/checkout@v4
@@ -36,8 +32,6 @@ jobs:
   # -------------------
   release:
     runs-on: ubuntu-latest
-    needs: build_pr
-    if: github.event_name == 'push'
     steps:
       - name: Checkout Release Branch
         uses: actions/checkout@v4
