@@ -12,5 +12,14 @@
 // EXPORT int add(int a = 0, int b= 0);
 
 // Custom Sqrt Function, does not support
-EXPORT double CustomSqrt(double input);
+EXPORT double CustomSqrt(int input_numerator, int input_denominator, int Iterations);
+class EXPORT Fraction {
+public:
+    int Numerator;
+    int Denominator;
+
+    Fraction(int n, int d);
+    operator double();
+    operator float();
+};
 #endif
